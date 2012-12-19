@@ -124,6 +124,8 @@ int main(int argc, char **argv)
             
         5. For the output of the code, check the comments in the end of main().   
         
+        6. Assume flat cosmology throughout.
+        
      */
      
      
