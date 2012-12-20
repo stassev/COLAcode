@@ -159,7 +159,7 @@ void ReconstructNormalOrder(float *dXr,float *dYr,float *dZr,struct particle_dat
 void slice(struct particle_data *P);
 float growthD2temp(float a);
 float growthD2(float a);
-
+void velRSD(struct particle_data *P,float A);
 
 
 

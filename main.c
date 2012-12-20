@@ -47,13 +47,17 @@ int main(int argc, char **argv)
     d/dy \equiv a/H_0*d/d\eta, 
     which is equivalent to T[]=d/dy in the notation of the paper.
     \eta = conformal time
-    s = the displacement vector
+    s = the displacement vector in comoving [Mpc/h]
     delta = fractional overdensity
     a = scale factor
     
-    Velocity variable is defined as:
+    Velocity variable in the code is defined as:
     vel\equiv T[s] = ds/dy =  Q*ds/da, 
-    where Q\equiv a^3 H(a)/H0.
+    where Q\equiv a^3 H(a)/H0. 
+     
+    In the end of main() we change the velocity variable to v_{rsd}=(ds/d\eta)/(a*H(a)), 
+    which is in comoving [Mpc/h], and can be directly added to $s$ to get the 
+    particle position in redshift space.
     
     When we subtract LPT, the new velocity variable is 
     d(s-s_LPT)/dy, so initially it is set to zero, as we see below.
@@ -523,7 +527,14 @@ for (timeStep=0;timeStep<nsteps+1;timeStep++){
 }
     finalize:
     
-    // At this point P contains the particle positions and velocities at redshift zf in Gadget units.
+    /*
+     * At this point P contains the particle positions (in comoving [Mpc/h]) 
+     * and velocities (ds/dy) at redshift zf. Now convert velocities to 
+     * v_{rsd}\equiv (ds/d\eta)/(a H(a)) with the function vellRSD().
+     * 
+     */
+    
+    velRSD(P,A);
     
     printf("slice:\n"); // Output a slice just for the sake of doing something with P.
     slice(P);
@@ -572,7 +583,7 @@ for (timeStep=0;timeStep<nsteps+1;timeStep++){
  * 
  * 
  */ 
- 
+  
 
 void Displacements(void){
     
@@ -629,8 +640,22 @@ void obtainDisplacements(struct particle_data *P,float *dX,float *dY,float *dZ){
     
   }
 
+/*
+ * 
+ * Change velocity variable from ds/dy to (ds/d\eta)/(aH(a))
+ * 
+ */ 
 
 
+void velRSD(struct particle_data *P,float A){
+        int i;
+        float fac=A/Qfactor(A);
+        for(i=1;i<=NumPart;i++){
+            P[i].Vel[0]*=fac;
+            P[i].Vel[2]*=fac;
+            P[i].Vel[3]*=fac;
+        }
+}
 
 /*
  * 
