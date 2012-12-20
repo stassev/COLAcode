@@ -55,12 +55,14 @@ int main(int argc, char **argv)
     vel\equiv T[s] = ds/dy =  Q*ds/da, 
     where Q\equiv a^3 H(a)/H0. 
      
-    In the end of main() we change the velocity variable to v_{rsd}=(ds/d\eta)/(a*H(a)), 
+    At the end of main() we change the velocity variable to v_{rsd}=(ds/d\eta)/(a*H(a)), 
     which is in comoving [Mpc/h], and can be directly added to $s$ to get the 
     particle position in redshift space.
     
     When we subtract LPT, the new velocity variable is 
-    d(s-s_LPT)/dy, so initially it is set to zero, as we see below.
+    d(s-s_LPT)/dy, so initially it is set to zero, as we see below. 
+    It is converted to ds/dy in the last timestep. And then again to v_{rsd}
+    at the end of main().
     */
     
     
