@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 {
     
     /*
-    The code solves Newton's equation in the form (eq. A.1 of TZE):
+    The code solves Newton's equation in the form (eq. (A.1) of TZE):
      d^2 (s)/dy^2 = - (3/2)*Omega_matter(a=1)*a*grad_x grad_x^(-2) \delta
     or its COLA modification. Above $y$ is defined as
     d/dy \equiv a/H_0*d/d\eta, 
@@ -81,10 +81,10 @@ int main(int argc, char **argv)
       
       StdDA -- Whether to assume standard or non-standard time-dependence for 
          the (residual) displacement in the non-COLA (COLA) implementation.
-         StdDA=0 is the modified COLA time-stepping (see eq. A.10 in TZE).
+         StdDA=0 is the modified COLA time-stepping (see eq. (A.15) in TZE).
          StdDA=1 is non-integral standard stepping. (Avoid! Just for debugging.)
          StdDA=2 is the integral (Quinn et al (1997), astro-ph/9710043) 
-           standard stepping. Equivalent to equations A.2 (non-COLA) and A.7 (COLA) in TZE.
+           standard stepping. Equivalent to equations A.3 (non-COLA) and A.7 (COLA) in TZE.
          
       When StdDA=0, one needs to set fullT and nLPT.
          fullT=0 assumes time dependence for velocity = A + B a^nLPT, with A>>B a^nLPT. (A and B are irrelevant)

@@ -10,7 +10,7 @@
     to reference the paper above.
     
     
-    * COLAcode is distributed under the GPLv3 license.
+    * COLAcode is open-source software, distributed under the GPLv3 license.
     * To compile the code, one needs the GSL and FFTW-3 libraries.
     * Run "make" to compile. 
     * Run "./COLAcode" to run the code.
