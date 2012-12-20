@@ -652,8 +652,8 @@ void velRSD(struct particle_data *P,float A){
         float fac=A/Qfactor(A);
         for(i=1;i<=NumPart;i++){
             P[i].Vel[0]*=fac;
+            P[i].Vel[1]*=fac;
             P[i].Vel[2]*=fac;
-            P[i].Vel[3]*=fac;
         }
 }
 
