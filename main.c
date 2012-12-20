@@ -387,7 +387,7 @@ for (timeStep=0;timeStep<nsteps+1;timeStep++){
     if (stepDistr==2) AFF=AofTime(CosmoTime(A)+da);
 
     if (timeStep==nsteps) AF=A;// half time-step for final kick
-    else { // Set to mid-point of interval. How one chooses the mid-point is really an extra degree of freedom in the code. But I find negligible effects from the different choices below. So, this is not exported as an extra switch at this point.
+    else { // Set to mid-point of interval. In the infinitesimal timestep limit, these choices are identical. How one chooses the mid-point when not in that limit is really an extra degree of freedom in the code. But I find negligible effects from the different choices below. So, this is not exported as an extra switch at this point.
         if (stepDistr==0) AF=A+da*0.5;
         if (stepDistr==1) AF=A*exp(da*0.5);
         if (stepDistr==2) AF=AofTime((CosmoTime(AFF)+CosmoTime(A))*0.5); 
