@@ -9,6 +9,8 @@
     If you use the COLA method or COLAcode for scientific work, we kindly ask you 
     to reference the paper above.
     
+    
+    * COLAcode is distributed under the GPLv3 license.
     * To compile the code, one needs the GSL and FFTW-3 libraries.
     * Run "make" to compile. 
     * Run "./COLAcode" to run the code.
