@@ -89,7 +89,7 @@ int main(int argc, char **argv)
       When StdDA=0, one needs to set fullT and nLPT.
          fullT=0 assumes time dependence for velocity = A + B a^nLPT, with A>>B a^nLPT. (A and B are irrelevant)
          fullT=1 assumes time dep. for velocity = B a^nLPT
-         nLPT is a real number. Sane values lie in the range (-4.5,3). Cannot be 0, but of course can be -> 0 (say 0.001).
+         nLPT is a real number. Sane values lie in the range (-4,3.5). Cannot be 0, but of course can be -> 0 (say 0.001).
          See Section A.3 of TZE.
       
      */
