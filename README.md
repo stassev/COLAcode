@@ -3,7 +3,7 @@
 
     This is COLAcode: a serial particle mesh-based N-body code 
      illustrating the COLA (COmoving Lagrangian Acceleration) method 
-     described in S. Tassev, M. Zaldarriaga, D. Eisenstein (2012).
+     described in S. Tassev, M. Zaldarriaga, D. Eisenstein 2013 (arXiv:1301.0322).
      Check that paper for the details.
      
     If you use the COLA method or COLAcode for scientific work, we kindly ask you 
